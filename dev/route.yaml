@@ -1,0 +1,36 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    openshift.io/host.generated: 'true'
+  creationTimestamp: '2020-02-26T02:56:40Z'
+  labels:
+    app: reverse-words
+    app.kubernetes.io/instance: argocd-demo
+  name: reverse-words-route
+  namespace: argocd-demo
+  resourceVersion: '118927'
+  selfLink: >-
+    /apis/route.openshift.io/v1/namespaces/argocd-demo/routes/reverse-words-route
+  uid: 995f5ce6-7145-4578-9b3d-cbadada298f7
+spec:
+  host: >-
+    reverse-words-route-argocd-demo.apps.cluster-tor-76a5.tor-76a5.example.opentlc.com
+  port:
+    targetPort: http
+  to:
+    kind: Service
+    name: reverse-words
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+    - conditions:
+        - lastTransitionTime: '2020-02-26T02:56:41Z'
+          status: 'True'
+          type: Admitted
+      host: >-
+        reverse-words-route-argocd-demo.apps.cluster-tor-76a5.tor-76a5.example.opentlc.com
+      routerCanonicalHostname: apps.cluster-tor-76a5.tor-76a5.example.opentlc.com
+      routerName: default
+      wildcardPolicy: None
