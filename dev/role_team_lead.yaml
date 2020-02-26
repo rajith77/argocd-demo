@@ -5,5 +5,5 @@ metadata:
   name: team-lead
 rules:
 - apiGroups: [""] # "" indicates the core API group
-  resources: ["pods", "deployment", "service", "route"]
+  resources: ["project", "pods", "deployment", "service", "route"]
   verbs: ["get", "watch", "list"]
