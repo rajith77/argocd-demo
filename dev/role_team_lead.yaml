@@ -6,13 +6,13 @@ metadata:
 rules:
 - verbs: ["get", "watch", "list"]
   apiGroups: [""] # "" indicates the core API group
-  resources: ["pods", "deployments, "services"]
-- verbs: ["get", "watch", "list"]
-  apiGroups: ["apps"]
-  resources: ["deployments"]
+  resources: ["pods", "services"]
 - verbs: ["get", "watch", "list"]    
   apiGroups: ["", "route.openshift.io"]
   resources: ["routes"]
 - verbs: ["get"]    
   apiGroups: ["", "project.openshift.io"]
   resources: ["projects"]
+- verbs: ["get", "watch", "list"]
+  apiGroups: ["", "extensions", "apps"]
+  resources: ["deployments"]
