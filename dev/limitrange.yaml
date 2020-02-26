@@ -1,0 +1,21 @@
+kind: LimitRange
+apiVersion: v1
+metadata:
+  name: argocd-demo-core-resource-limits
+  namespace: argocd-demo
+spec:
+  limits:
+    - type: Container
+      max:
+        cpu: '2'
+        memory: 2Gi
+      default:
+        cpu: 500m
+        memory: 1Gi
+      defaultRequest:
+        cpu: 50m
+        memory: 256Mi
+    - type: Pod
+      max:
+        cpu: '4'
+        memory: 4Gi
